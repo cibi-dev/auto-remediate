@@ -24,7 +24,7 @@ dev = [
 ]
 
 [project.scripts]
-auto-remediate = "auto_remediate.cli:app"
+auto-remediate = "auto_remediate.cli:main"
 
 [tool.pytest.ini_options]
 testpaths = ["tests"]
