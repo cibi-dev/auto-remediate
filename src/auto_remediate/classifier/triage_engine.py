@@ -2,19 +2,20 @@
 
 from __future__ import annotations
 
+from dataclasses import dataclass
 from typing import List, Optional
-from pydantic import BaseModel, Field
 
 from auto_remediate.schemas import SecurityFinding
 
 
-class TriagedFinding(BaseModel):
+@dataclass
+class TriagedFinding:
     """Hallazgo de seguridad triado con clasificación de auto-remediación."""
 
     finding: SecurityFinding
     is_fixable: bool
     fixer_type: str  # SUBPROCESS_SHELL_TRUE, MISSING_TIMEOUT, INSECURE_FILE_MODE, CREDENTIAL_LEAK, MANUAL_REVIEW_REQUIRED
-    priority_score: int = Field(ge=1, le=100)
+    priority_score: int
     action_plan: str
     remediation_notes: Optional[str] = None
 

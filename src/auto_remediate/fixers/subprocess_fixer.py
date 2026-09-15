@@ -3,7 +3,6 @@
 from __future__ import annotations
 
 import ast
-import re
 import shlex
 from typing import Optional
 
@@ -61,13 +60,6 @@ class _SubprocessTransformer(ast.NodeTransformer):
 
 class SubprocessFixer:
     """Remediador determinista de vulnerabilidades CWE-78 en llamadas a subprocess."""
-
-    @staticmethod
-    def fix_shell_true(code: str) -> str:
-        """Remediación rápida basada en regex para compatibilidad hacia atrás."""
-        pattern = r"subprocess\.(run|Popen|call|check_call|check_output)\((.*?),\s*shell=True(.*?)\)"
-        # Safe replacement removing shell=True
-        return re.sub(pattern, r"subprocess.\g<1>(\g<2>\g<3>)", code)
 
     @staticmethod
     def fix_code_ast(code: str) -> tuple[str, bool]:

@@ -10,12 +10,7 @@ readme = "README.md"
 requires-python = ">=3.10"
 license = {text = "MIT"}
 authors = [{name = "Juan De Andrade", email = "cibi-dev@users.noreply.github.com"}]
-dependencies = [
-    "typer>=0.9.0,<1.0.0",
-    "pydantic>=2.7.0,<3.0.0",
-    "pyyaml>=6.0.0,<7.0.0",
-    "rich>=13.0.0,<14.0.0",
-]
+dependencies = []
 
 [project.optional-dependencies]
 dev = [

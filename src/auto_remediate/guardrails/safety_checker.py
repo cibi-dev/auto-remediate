@@ -4,8 +4,8 @@ from __future__ import annotations
 
 import ast
 import os
+from dataclasses import dataclass
 from typing import Optional
-from pydantic import BaseModel
 
 PROTECTED_KEYWORDS = [
     "auth",
@@ -23,7 +23,8 @@ PROTECTED_KEYWORDS = [
 DANGEROUS_CALLS = {"eval", "exec", "__import__", "compile"}
 
 
-class GuardrailVerdict(BaseModel):
+@dataclass
+class GuardrailVerdict:
     """Veredicto estructurado de validación de seguridad agéntica."""
 
     is_allowed: bool
@@ -42,13 +43,6 @@ class SafetyGuardrails:
         """Determina si la ruta del archivo corresponde a módulos críticos protegidos."""
         norm = file_path.lower().replace(os.sep, "/")
         return any(keyword in norm for keyword in PROTECTED_KEYWORDS)
-
-    @staticmethod
-    def validate_proposal(file_path: str) -> str:
-        """Compatibilidad básica hacia atrás."""
-        if SafetyGuardrails.is_file_protected(file_path):
-            return "BLOCKED_PROTECTED_PATH"
-        return "ALLOWED"
 
     def inspect_ast_safety(self, code: str) -> tuple[bool, Optional[str]]:
         """Analiza el árbol sintáctico (AST) para verificar validez y ausencia de llamadas prohibidas."""
