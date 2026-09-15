@@ -25,3 +25,7 @@ auto-remediate = "auto_remediate.cli:main"
 testpaths = ["tests"]
 python_files = ["test_*.py"]
 pythonpath = ["src"]
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/auto_remediate"]
+
