@@ -11,6 +11,10 @@
 
 Diseñado bajo la filosofía **Zero Hallucination / Sovereign DevSecOps**: no inventa código arbitrario ni delega la sintaxis a LLMs sin contención. Todas las transformaciones se ejecutan mediante manipulaciones formales de nodos del compilador de Python (`ast.NodeTransformer`), auditadas por guardrails de contención antes de cualquier mutación en disco.
 
+> 🌐 **Interactive Demo Showcase:** Este motor DevSecOps está integrado en la plataforma unificada **CrimAI Platform**. Puedes probar las mutaciones AST y diffs automáticos en vivo en el [Showcase Interactivo en GitHub Pages](https://cibi-dev.github.io/crimai-platform/).
+
+[![CrimAI Platform Showcase Preview](https://raw.githubusercontent.com/cibi-dev/crimai-platform/main/docs/assets/showcase-preview.svg)](https://cibi-dev.github.io/crimai-platform/)
+
 ---
 
 ## 🏗️ Arquitectura del Sistema
