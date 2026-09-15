@@ -5,6 +5,7 @@
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
 [![Zero-Cost](https://img.shields.io/badge/API%20Cost-%240.00%2Fmo-success.svg)](https://github.com/cibi-dev/auto-remediate)
 [![Coverage](https://img.shields.io/badge/Coverage-91%25-brightgreen.svg)](https://github.com/cibi-dev/auto-remediate)
+[![Live Demo](https://img.shields.io/badge/Live%20Demo-Interactive%20Showcase-2563eb?style=flat-square&logo=googlechrome&logoColor=white)](https://cibi-dev.github.io/crimai-platform/)
 
 > **Motor autónomo de auditoría y auto-remediación determinista basada en AST (Abstract Syntax Tree) con guardrails agénticos estrictos y reducción medible de deuda técnica.**
 
